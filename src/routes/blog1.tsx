@@ -39,47 +39,6 @@ const toc: TocItem[] = [
   { number: "18", id: "conclusion", title: "Conclusion" },
 ];
 
-function StickyNav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-        scrolled ? "py-2" : "py-4"
-      }`}
-    >
-      <div className={`mx-auto max-w-7xl px-4 transition-all ${scrolled ? "" : ""}`}>
-        <div className={`glass border-gradient rounded-2xl px-5 py-3 flex items-center justify-between ${scrolled ? "glow-shadow" : ""}`}>
-          <a href="#top" className="flex items-center gap-2.5 font-display font-bold">
-            <span className="w-8 h-8 rounded-lg grid place-items-center" style={{ background: "var(--gradient-text)" }}>
-              <Flame className="w-4 h-4 text-white" />
-            </span>
-            <span className="text-foreground">DevForge<span className="text-[var(--brand)]">.</span></span>
-          </a>
-          <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-            <a href="#introduction" className="hover:text-foreground transition-colors">Article</a>
-            <a href="#implementation" className="hover:text-foreground transition-colors">Code</a>
-            <a href="#faqs" className="hover:text-foreground transition-colors">FAQs</a>
-            <a href="https://firebase.google.com/docs/auth" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">Docs ↗</a>
-          </nav>
-          <a
-            href="#introduction"
-            className="hidden sm:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl text-primary-foreground hover:opacity-95 transition-opacity"
-            style={{ background: "var(--gradient-text)" }}
-          >
-            Start reading <ArrowRight className="w-3.5 h-3.5" />
-          </a>
-        </div>
-      </div>
-    </header>
-  );
-}
-
 function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden hero-bg">
