@@ -737,8 +737,76 @@ export default function LoginPage() {
               </table>
             </div>
 
-            {/* 13. FAQs */}
-            <SectionHeading number="13" id="faqs">Frequently Asked Questions</SectionHeading>
+            {/* 13. Applications & Benefits */}
+            <SectionHeading number="13" id="applications">Applications & Benefits</SectionHeading>
+            <p>
+              Firebase Authentication powers identity for products you use every day — from indie SaaS dashboards to top-100 mobile apps. A few representative deployments:
+            </p>
+            <ul>
+              <li><strong>SaaS dashboards</strong> — quick onboarding with email/password plus Google Workspace SSO.</li>
+              <li><strong>E-commerce storefronts</strong> — anonymous carts that convert to full accounts at checkout, no data loss.</li>
+              <li><strong>EdTech platforms</strong> — schools sign students in with Google Workspace, no separate password to manage.</li>
+              <li><strong>Mobile-first social apps</strong> — phone-number OTP authentication without running an SMS gateway.</li>
+              <li><strong>Internal admin tools</strong> — role-gated access using custom claims plus App Check to block bots.</li>
+            </ul>
+            <h3>Key benefits</h3>
+            <ul>
+              <li><strong>Time-to-market</strong> — a full auth system in an afternoon instead of a sprint.</li>
+              <li><strong>Security by default</strong> — RSA-signed JWTs, refresh-token rotation, secure persistence, all managed for you.</li>
+              <li><strong>Multi-platform</strong> — the same identity works across Web, iOS, Android, and Flutter.</li>
+              <li><strong>Operational savings</strong> — no servers to patch, no incident response for auth outages.</li>
+              <li><strong>Ecosystem fit</strong> — first-class integration with Firestore Security Rules, Cloud Functions, and Analytics.</li>
+            </ul>
+
+            {/* 14. Challenges Faced */}
+            <SectionHeading number="14" id="challenges">Challenges Faced</SectionHeading>
+            <p>
+              Implementing Firebase Authentication end-to-end isn't friction-free. A short, honest log of the issues encountered while building the reference app:
+            </p>
+            <ul>
+              <li><strong>Hydration mismatches in SSR</strong> — the client SDK reads <code>localStorage</code>, which the server can't access. The fix is server-side session cookies via the Admin SDK.</li>
+              <li><strong>Popup blockers on mobile Safari</strong> — <code>signInWithPopup</code> silently fails. We added a fallback to <code>signInWithRedirect</code>.</li>
+              <li><strong>Race condition on first render</strong> — guarding routes before <code>onAuthStateChanged</code> resolved flashed the login page. A <code>loading</code> flag on the context solved it.</li>
+              <li><strong>Custom claims propagation</strong> — claims only update on token refresh. Forcing <code>getIdToken(true)</code> after a role change avoids stale UI.</li>
+              <li><strong>Quota limits in development</strong> — daily email-verification quotas on the Spark plan hit during testing; we moved staging to Blaze.</li>
+              <li><strong>Vendor lock-in anxiety</strong> — mitigated by exporting users regularly via <code>firebase auth:export</code> with the scrypt hash format.</li>
+            </ul>
+            <Callout variant="info" title="Lesson learned">
+              Auth code is mostly <em>error handling</em>. Spend more time on the unhappy paths (expired tokens, blocked popups, revoked accounts) than on the happy path.
+            </Callout>
+
+            {/* 15. Future Scope */}
+            <SectionHeading number="15" id="future-scope">Trends & Future Scope</SectionHeading>
+            <p>
+              Identity in 2026 is moving from passwords toward <strong>passwordless</strong> and <strong>device-bound</strong> credentials. Firebase Auth is tracking these shifts:
+            </p>
+            <ul>
+              <li><strong>Passkeys (WebAuthn)</strong> — phishing-resistant device-bound credentials are landing in mainstream SDKs.</li>
+              <li><strong>Identity Platform (GCP)</strong> — Firebase Auth's enterprise tier adds SAML, OIDC, multi-tenancy, and MFA enforcement policies.</li>
+              <li><strong>Edge-rendered auth</strong> — session cookies validated at the CDN edge for sub-50ms gated pages.</li>
+              <li><strong>Zero-trust architecture</strong> — short-lived tokens, continuous re-authentication, device posture checks.</li>
+              <li><strong>AI-assisted abuse detection</strong> — credential stuffing and bot signups flagged automatically by App Check + reCAPTCHA Enterprise.</li>
+            </ul>
+            <p>
+              For students entering the field today, identity is no longer an undifferentiated commodity — it's a moving target where security, UX, and compliance intersect. Becoming fluent in a managed identity platform is one of the highest-leverage skills you can pick up.
+            </p>
+
+            {/* 16. References */}
+            <SectionHeading number="16" id="references">References & Learning Resources</SectionHeading>
+            <ul>
+              <li><a href="https://firebase.google.com/docs/auth" target="_blank" rel="noreferrer">Firebase Authentication — Official Documentation</a></li>
+              <li><a href="https://firebase.google.com/docs/auth/web/start" target="_blank" rel="noreferrer">Get Started with Firebase Auth on the Web (v9+ Modular SDK)</a></li>
+              <li><a href="https://firebase.google.com/docs/auth/admin" target="_blank" rel="noreferrer">Firebase Admin SDK — Server-side Auth & Custom Claims</a></li>
+              <li><a href="https://firebase.google.com/docs/firestore/security/rules-conditions" target="_blank" rel="noreferrer">Firestore Security Rules — Auth Conditions Reference</a></li>
+              <li><a href="https://firebase.google.com/docs/app-check" target="_blank" rel="noreferrer">Firebase App Check — Bot & Abuse Protection</a></li>
+              <li><a href="https://cloud.google.com/identity-platform" target="_blank" rel="noreferrer">Google Cloud Identity Platform — Enterprise Tier</a></li>
+              <li><a href="https://webauthn.guide/" target="_blank" rel="noreferrer">WebAuthn Guide — Passkeys Primer</a></li>
+              <li><a href="https://jwt.io/introduction" target="_blank" rel="noreferrer">JWT.io — JSON Web Tokens Explained</a></li>
+              <li><a href="https://www.youtube.com/c/Firebase" target="_blank" rel="noreferrer">Firebase on YouTube — Official channel & tutorials</a></li>
+            </ul>
+
+            {/* 17. FAQs */}
+            <SectionHeading number="17" id="faqs">Frequently Asked Questions</SectionHeading>
             <div className="my-6 space-y-3 not-prose">
               {[
                 {
