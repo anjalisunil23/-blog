@@ -39,13 +39,13 @@ export function TableOfContents({ items }: { items: TocItem[] }) {
                 href={`#${item.id}`}
                 className="group flex items-start gap-3 text-sm rounded-lg px-2 py-1.5 transition-all"
                 style={{
-                  color: isActive ? "var(--brand)" : "oklch(0.72 0.02 260)",
-                  background: isActive ? "oklch(0.78 0.18 55 / 0.08)" : "transparent",
+                  color: isActive ? "var(--brand)" : "oklch(0.45 0.02 260)",
+                  background: isActive ? "oklch(0.68 0.18 45 / 0.10)" : "transparent",
                 }}
               >
                 <span
                   className="font-mono text-[11px] mt-0.5 shrink-0 w-6"
-                  style={{ color: isActive ? "var(--brand)" : "oklch(0.55 0.03 260)" }}
+                  style={{ color: isActive ? "var(--brand)" : "oklch(0.60 0.02 260)" }}
                 >
                   {item.number}
                 </span>
