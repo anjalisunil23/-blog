@@ -12,6 +12,7 @@ import { CodeBlock } from "@/components/CodeBlock";
 import { Callout } from "@/components/Callout";
 import { TableOfContents, type TocItem } from "@/components/TableOfContents";
 import { MockScreenshot } from "@/components/MockScreenshot";
+import { SiteNav } from "@/components/SiteNav";
 
 export const Route = createFileRoute("/blog1")({
   component: BlogPost,
