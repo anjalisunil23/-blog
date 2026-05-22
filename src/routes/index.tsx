@@ -5,6 +5,7 @@ import {
   CheckCircle2, XCircle, Github, Twitter, Linkedin, Sparkles,
   Lock, Mail, Smartphone, UserCheck, Globe, KeyRound,
 } from "lucide-react";
+// note: User icon retained for diagrams
 import heroImg from "@/assets/hero-firebase-auth.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { CodeBlock } from "@/components/CodeBlock";
