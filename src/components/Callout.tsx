@@ -4,10 +4,10 @@ import type { ReactNode } from "react";
 type Variant = "tip" | "warning" | "info" | "danger";
 
 const config: Record<Variant, { icon: typeof Info; label: string; color: string; bg: string }> = {
-  tip:     { icon: Lightbulb,    label: "Pro Tip",  color: "oklch(0.80 0.16 145)", bg: "oklch(0.30 0.10 145 / 0.18)" },
-  warning: { icon: AlertTriangle, label: "Warning",  color: "oklch(0.82 0.15 60)",  bg: "oklch(0.30 0.10 60 / 0.18)" },
-  info:    { icon: Info,         label: "Note",     color: "oklch(0.78 0.14 220)", bg: "oklch(0.30 0.10 220 / 0.18)" },
-  danger:  { icon: ShieldAlert,  label: "Critical", color: "oklch(0.72 0.20 25)",  bg: "oklch(0.30 0.10 25 / 0.18)" },
+  tip:     { icon: Lightbulb,     label: "Pro Tip",  color: "oklch(0.45 0.16 145)", bg: "oklch(0.96 0.05 145 / 0.6)" },
+  warning: { icon: AlertTriangle, label: "Warning",  color: "oklch(0.50 0.16 60)",  bg: "oklch(0.97 0.05 75 / 0.7)" },
+  info:    { icon: Info,          label: "Note",     color: "oklch(0.45 0.15 240)", bg: "oklch(0.97 0.03 240 / 0.7)" },
+  danger:  { icon: ShieldAlert,   label: "Critical", color: "oklch(0.50 0.20 25)",  bg: "oklch(0.97 0.04 25 / 0.7)" },
 };
 
 export function Callout({ variant = "info", title, children }: { variant?: Variant; title?: string; children: ReactNode }) {
