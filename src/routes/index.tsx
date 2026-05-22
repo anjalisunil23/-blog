@@ -96,7 +96,6 @@ function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-          <span className="flex items-center gap-2"><User className="w-4 h-4 text-[var(--brand)]" /> By Arjun Mehta</span>
           <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[var(--brand)]" /> May 21, 2026</span>
           <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--brand)]" /> 22 min read</span>
         </div>
