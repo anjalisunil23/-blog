@@ -20,7 +20,7 @@ export function SiteNav() {
             <span className="w-8 h-8 rounded-lg grid place-items-center" style={{ background: "var(--gradient-text)" }}>
               <Flame className="w-4 h-4 text-white" />
             </span>
-            <span className="text-foreground">DevForge<span className="text-[var(--brand)]">.</span></span>
+            <span className="text-foreground">LearnWithAnjali</span>
           </Link>
           <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
             <Link to="/" className="hover:text-foreground transition-colors" activeOptions={{ exact: true }} activeProps={{ className: "text-foreground" }}>Home</Link>

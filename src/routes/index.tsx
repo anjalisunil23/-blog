@@ -76,7 +76,7 @@ function Home() {
 
       <footer className="border-t border-border py-10 text-center text-sm text-muted-foreground">
         <div className="mx-auto max-w-7xl px-4">
-          <span>© 2026 DevForge Engineering Blog</span>
+          <span>All rights reserved LearnWithAnjali</span>
         </div>
       </footer>
     </div>
