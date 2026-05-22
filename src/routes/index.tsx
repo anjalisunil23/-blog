@@ -855,20 +855,11 @@ export default function LoginPage() {
               </div>
             </div>
 
-            {/* Author footer */}
-            <div className="mt-16 pt-8 border-t border-white/8 flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full grid place-items-center font-bold text-background" style={{ background: "var(--gradient-text)" }}>AM</div>
-                <div>
-                  <div className="font-display font-semibold">Arjun Mehta</div>
-                  <div className="text-sm text-muted-foreground">Staff Engineer · Writing about web infra</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <a href="#" className="hover:text-foreground"><Twitter className="w-5 h-5" /></a>
-                <a href="#" className="hover:text-foreground"><Github className="w-5 h-5" /></a>
-                <a href="#" className="hover:text-foreground"><Linkedin className="w-5 h-5" /></a>
-              </div>
+            {/* Footer share links */}
+            <div className="mt-16 pt-8 border-t border-border flex items-center justify-end gap-3 text-muted-foreground">
+              <a href="#" className="hover:text-foreground"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-foreground"><Github className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-foreground"><Linkedin className="w-5 h-5" /></a>
             </div>
           </article>
         </div>
