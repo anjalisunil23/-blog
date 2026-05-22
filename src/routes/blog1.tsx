@@ -228,7 +228,7 @@ function BlogPost() {
   return (
     <div id="top" className="relative min-h-screen">
       <ReadingProgress />
-      <StickyNav />
+      <SiteNav />
       <Hero />
 
       <div className="mx-auto max-w-7xl px-4 pb-24">
