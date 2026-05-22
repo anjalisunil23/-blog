@@ -48,7 +48,7 @@ export function CodeBlock({ code, language = "tsx", filename }: Props) {
   return (
     <div className="my-6 group">
       <div className="glass border-gradient rounded-xl overflow-hidden glow-shadow">
-        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/5 bg-black/20">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-[oklch(0.18_0.02_270)]">
           <div className="flex items-center gap-2">
             <div className="flex gap-1.5">
               <span className="w-3 h-3 rounded-full bg-[oklch(0.65_0.20_25)]" />
@@ -61,7 +61,7 @@ export function CodeBlock({ code, language = "tsx", filename }: Props) {
           </div>
           <button
             onClick={onCopy}
-            className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-md hover:bg-white/5"
+            className="flex items-center gap-1.5 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-md hover:bg-muted"
             aria-label="Copy code"
           >
             {copied ? <Check className="w-3.5 h-3.5 text-[var(--brand)]" /> : <Copy className="w-3.5 h-3.5" />}

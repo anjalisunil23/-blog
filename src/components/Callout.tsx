@@ -15,7 +15,7 @@ export function Callout({ variant = "info", title, children }: { variant?: Varia
   const Icon = c.icon;
   return (
     <div
-      className="my-6 rounded-xl border border-white/8 p-4 flex gap-3"
+      className="my-6 rounded-xl border border-border p-4 flex gap-3"
       style={{ background: c.bg, borderColor: c.color + "33" }}
     >
       <Icon className="w-5 h-5 mt-0.5 shrink-0" style={{ color: c.color }} />
