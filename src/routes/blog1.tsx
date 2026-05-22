@@ -31,8 +31,12 @@ const toc: TocItem[] = [
   { number: "10", id: "errors", title: "Common Errors & Fixes" },
   { number: "11", id: "pros-cons", title: "Advantages & Disadvantages" },
   { number: "12", id: "comparison", title: "Firebase Auth vs Alternatives" },
-  { number: "13", id: "faqs", title: "FAQs" },
-  { number: "14", id: "conclusion", title: "Conclusion" },
+  { number: "13", id: "applications", title: "Applications & Benefits" },
+  { number: "14", id: "challenges", title: "Challenges Faced" },
+  { number: "15", id: "future-scope", title: "Trends & Future Scope" },
+  { number: "16", id: "references", title: "References & Resources" },
+  { number: "17", id: "faqs", title: "FAQs" },
+  { number: "18", id: "conclusion", title: "Conclusion" },
 ];
 
 function StickyNav() {
