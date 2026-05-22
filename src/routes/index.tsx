@@ -185,7 +185,7 @@ function LoginScreenshot() {
         </button>
         <div className="relative text-center text-xs text-muted-foreground my-3">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border" /></div>
-          <span className="relative bg-[oklch(0.18_0.03_280)] px-2">or continue with</span>
+          <span className="relative bg-background px-2">or continue with</span>
         </div>
         <button className="w-full py-2.5 rounded-lg text-sm font-medium bg-muted border border-border flex items-center justify-center gap-2">
           <Globe className="w-4 h-4" /> Google
