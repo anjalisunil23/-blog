@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+
 import {
   Flame, Shield, Zap, Clock, Calendar, User, ArrowRight,
   CheckCircle2, XCircle, Github, Twitter, Linkedin, Sparkles,
