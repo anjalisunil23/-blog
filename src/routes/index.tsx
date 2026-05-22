@@ -101,7 +101,7 @@ function Hero() {
           <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--brand)]" /> 22 min read</span>
         </div>
 
-        <div className="mt-12 relative rounded-3xl overflow-hidden border-gradient glow-shadow anim-float">
+        <div className="mt-12 relative rounded-2xl overflow-hidden border border-border shadow-sm">
           <img
             src={heroImg}
             alt="Firebase Authentication shield emblem floating over a futuristic developer environment"
@@ -109,7 +109,6 @@ function Hero() {
             height={1024}
             className="w-full h-auto"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
         </div>
 
         <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs">
