@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Blog2RouteImport } from './routes/blog2'
 import { Route as Blog1RouteImport } from './routes/blog1'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Blog2Route = Blog2RouteImport.update({
+  id: '/blog2',
+  path: '/blog2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Blog1Route = Blog1RouteImport.update({
   id: '/blog1',
   path: '/blog1',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blog1': typeof Blog1Route
+  '/blog2': typeof Blog2Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blog1': typeof Blog1Route
+  '/blog2': typeof Blog2Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blog1': typeof Blog1Route
+  '/blog2': typeof Blog2Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blog1'
+  fullPaths: '/' | '/blog1' | '/blog2'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog1'
-  id: '__root__' | '/' | '/blog1'
+  to: '/' | '/blog1' | '/blog2'
+  id: '__root__' | '/' | '/blog1' | '/blog2'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Blog1Route: typeof Blog1Route
+  Blog2Route: typeof Blog2Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/blog2': {
+      id: '/blog2'
+      path: '/blog2'
+      fullPath: '/blog2'
+      preLoaderRoute: typeof Blog2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog1': {
       id: '/blog1'
       path: '/blog1'
@@ -71,7 +88,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Blog1Route: Blog1Route,
+  Blog2Route: Blog2Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
