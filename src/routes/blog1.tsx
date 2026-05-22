@@ -864,7 +864,7 @@ export default function LoginPage() {
             </div>
 
             {/* 14. Conclusion */}
-            <SectionHeading number="14" id="conclusion">Conclusion</SectionHeading>
+            <SectionHeading number="18" id="conclusion">Conclusion</SectionHeading>
             <p>
               You now have everything you need to ship a production-grade auth system: a typed <code>AuthContext</code>, six sign-in flows, protected routes, security rules, and a clear list of pitfalls to avoid. Firebase Authentication won't be the right tool forever — at some point you may outgrow the lock-in or need self-hosting — but it's almost always the right tool to start with.
             </p>
