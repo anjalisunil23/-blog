@@ -5,6 +5,7 @@ import {
   CheckCircle2, XCircle, Github, Twitter, Linkedin, Sparkles,
   Lock, Mail, Smartphone, UserCheck, Globe, KeyRound,
 } from "lucide-react";
+// note: User icon retained for diagrams
 import heroImg from "@/assets/hero-firebase-auth.jpg";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import { CodeBlock } from "@/components/CodeBlock";
@@ -51,7 +52,7 @@ function StickyNav() {
         <div className={`glass border-gradient rounded-2xl px-5 py-3 flex items-center justify-between ${scrolled ? "glow-shadow" : ""}`}>
           <a href="#top" className="flex items-center gap-2.5 font-display font-bold">
             <span className="w-8 h-8 rounded-lg grid place-items-center" style={{ background: "var(--gradient-text)" }}>
-              <Flame className="w-4 h-4 text-background" />
+              <Flame className="w-4 h-4 text-white" />
             </span>
             <span className="text-foreground">DevForge<span className="text-[var(--brand)]">.</span></span>
           </a>
@@ -96,12 +97,11 @@ function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-          <span className="flex items-center gap-2"><User className="w-4 h-4 text-[var(--brand)]" /> By Arjun Mehta</span>
           <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[var(--brand)]" /> May 21, 2026</span>
           <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--brand)]" /> 22 min read</span>
         </div>
 
-        <div className="mt-12 relative rounded-3xl overflow-hidden border-gradient glow-shadow anim-float">
+        <div className="mt-12 relative rounded-2xl overflow-hidden border border-border shadow-sm">
           <img
             src={heroImg}
             alt="Firebase Authentication shield emblem floating over a futuristic developer environment"
@@ -109,7 +109,6 @@ function Hero() {
             height={1024}
             className="w-full h-auto"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
         </div>
 
         <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs">
@@ -153,13 +152,13 @@ function ConsoleScreenshot() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         {providers.map((p) => (
-          <div key={p.name} className="flex items-center justify-between bg-white/5 border border-white/8 rounded-lg px-3 py-2.5">
+          <div key={p.name} className="flex items-center justify-between bg-muted border border-border rounded-lg px-3 py-2.5">
             <div className="flex items-center gap-2.5">
               <p.icon className="w-4 h-4 text-muted-foreground" />
               <span className="text-sm">{p.name}</span>
             </div>
             <span className={`text-xs font-mono px-2 py-0.5 rounded-full ${
-              p.enabled ? "bg-[oklch(0.30_0.12_145/0.3)] text-[oklch(0.85_0.16_145)]" : "bg-white/5 text-muted-foreground"
+              p.enabled ? "bg-[oklch(0.30_0.12_145/0.3)] text-[oklch(0.85_0.16_145)]" : "bg-muted text-muted-foreground"
             }`}>{p.enabled ? "Enabled" : "Disabled"}</span>
           </div>
         ))}
@@ -173,22 +172,22 @@ function LoginScreenshot() {
     <div className="max-w-sm mx-auto">
       <div className="text-center mb-5">
         <div className="w-12 h-12 mx-auto rounded-2xl grid place-items-center mb-3" style={{ background: "var(--gradient-text)" }}>
-          <Lock className="w-5 h-5 text-background" />
+          <Lock className="w-5 h-5 text-white" />
         </div>
         <h3 className="font-display font-semibold text-xl">Welcome back</h3>
         <p className="text-sm text-muted-foreground">Sign in to continue to your dashboard</p>
       </div>
       <div className="space-y-3">
-        <input readOnly value="alex@devforge.io" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm font-mono" />
-        <input readOnly value="••••••••••" className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm font-mono" />
-        <button className="w-full py-2.5 rounded-lg text-sm font-semibold text-background" style={{ background: "var(--gradient-text)" }}>
+        <input readOnly value="alex@devforge.io" className="w-full bg-muted border border-border rounded-lg px-3 py-2.5 text-sm font-mono" />
+        <input readOnly value="••••••••••" className="w-full bg-muted border border-border rounded-lg px-3 py-2.5 text-sm font-mono" />
+        <button className="w-full py-2.5 rounded-lg text-sm font-semibold text-white" style={{ background: "var(--gradient-text)" }}>
           Sign in
         </button>
         <div className="relative text-center text-xs text-muted-foreground my-3">
-          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/8" /></div>
-          <span className="relative bg-[oklch(0.18_0.03_280)] px-2">or continue with</span>
+          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border" /></div>
+          <span className="relative bg-background px-2">or continue with</span>
         </div>
-        <button className="w-full py-2.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 flex items-center justify-center gap-2">
+        <button className="w-full py-2.5 rounded-lg text-sm font-medium bg-muted border border-border flex items-center justify-center gap-2">
           <Globe className="w-4 h-4" /> Google
         </button>
       </div>
@@ -205,7 +204,7 @@ function DashboardScreenshot() {
           <div className="font-display font-semibold text-lg">Welcome back, Alex 👋</div>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full grid place-items-center text-xs font-bold text-background" style={{ background: "var(--gradient-text)" }}>AM</div>
+          <div className="w-8 h-8 rounded-full grid place-items-center text-xs font-bold text-white" style={{ background: "var(--gradient-text)" }}>AM</div>
         </div>
       </div>
       <div className="grid grid-cols-3 gap-3">
@@ -214,14 +213,14 @@ function DashboardScreenshot() {
           { label: "API calls", value: "84.2k", change: "+8%" },
           { label: "Latency", value: "92ms", change: "-3%" },
         ].map((s) => (
-          <div key={s.label} className="bg-white/5 border border-white/8 rounded-lg p-3">
+          <div key={s.label} className="bg-muted border border-border rounded-lg p-3">
             <div className="text-xs text-muted-foreground">{s.label}</div>
             <div className="text-xl font-display font-semibold mt-1">{s.value}</div>
             <div className="text-xs text-[oklch(0.80_0.16_145)] mt-1 font-mono">{s.change}</div>
           </div>
         ))}
       </div>
-      <div className="mt-4 bg-white/5 border border-white/8 rounded-lg p-3">
+      <div className="mt-4 bg-muted border border-border rounded-lg p-3">
         <div className="text-xs text-muted-foreground mb-2">Authenticated user (onAuthStateChanged)</div>
         <pre className="text-xs font-mono text-[oklch(0.85_0.14_220)] overflow-x-auto">{`{ uid: "u_8j2k…", email: "alex@devforge.io", emailVerified: true }`}</pre>
       </div>
@@ -244,7 +243,7 @@ function FlowDiagram() {
           { icon: Shield, label: "App", sub: "Grants access" },
         ].map((step, i, arr) => (
           <div key={step.label} className="flex md:flex-col items-center md:items-stretch gap-3 flex-1">
-            <div className="flex-1 rounded-xl bg-white/4 border border-white/8 p-4 text-center">
+            <div className="flex-1 rounded-xl bg-muted border border-border p-4 text-center">
               <step.icon className="w-5 h-5 mx-auto mb-2 text-[var(--brand)]" />
               <div className="font-display font-semibold">{step.label}</div>
               <div className="text-xs text-muted-foreground mt-1">{step.sub}</div>
@@ -685,7 +684,7 @@ export default function LoginPage() {
             <SectionHeading number="10" id="errors">Common Errors & Fixes</SectionHeading>
             <div className="overflow-x-auto my-6 not-prose">
               <table className="w-full text-sm glass border-gradient rounded-xl overflow-hidden">
-                <thead className="text-left bg-white/5">
+                <thead className="text-left bg-muted">
                   <tr>
                     <th className="px-4 py-3 font-display">Error</th>
                     <th className="px-4 py-3 font-display">Cause</th>
@@ -744,7 +743,7 @@ export default function LoginPage() {
             <SectionHeading number="12" id="comparison">Firebase Auth vs Alternatives</SectionHeading>
             <div className="overflow-x-auto my-6 not-prose">
               <table className="w-full text-sm glass border-gradient rounded-xl overflow-hidden">
-                <thead className="text-left bg-white/5">
+                <thead className="text-left bg-muted">
                   <tr>
                     <th className="px-4 py-3 font-display">Feature</th>
                     <th className="px-4 py-3 font-display">Firebase Auth</th>
@@ -847,7 +846,7 @@ export default function LoginPage() {
                 Share it with another developer who's about to build their own login form from scratch.
               </p>
               <div className="flex justify-center gap-3 mt-5">
-                <a className="px-4 py-2 rounded-lg text-sm font-medium text-background" style={{ background: "var(--gradient-text)" }} href="https://twitter.com/intent/tweet" target="_blank" rel="noreferrer">
+                <a className="px-4 py-2 rounded-lg text-sm font-medium text-white" style={{ background: "var(--gradient-text)" }} href="https://twitter.com/intent/tweet" target="_blank" rel="noreferrer">
                   Share on Twitter
                 </a>
                 <a className="px-4 py-2 rounded-lg text-sm font-medium glass" href="#top">
@@ -856,26 +855,17 @@ export default function LoginPage() {
               </div>
             </div>
 
-            {/* Author footer */}
-            <div className="mt-16 pt-8 border-t border-white/8 flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full grid place-items-center font-bold text-background" style={{ background: "var(--gradient-text)" }}>AM</div>
-                <div>
-                  <div className="font-display font-semibold">Arjun Mehta</div>
-                  <div className="text-sm text-muted-foreground">Staff Engineer · Writing about web infra</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <a href="#" className="hover:text-foreground"><Twitter className="w-5 h-5" /></a>
-                <a href="#" className="hover:text-foreground"><Github className="w-5 h-5" /></a>
-                <a href="#" className="hover:text-foreground"><Linkedin className="w-5 h-5" /></a>
-              </div>
+            {/* Footer share links */}
+            <div className="mt-16 pt-8 border-t border-border flex items-center justify-end gap-3 text-muted-foreground">
+              <a href="#" className="hover:text-foreground"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-foreground"><Github className="w-5 h-5" /></a>
+              <a href="#" className="hover:text-foreground"><Linkedin className="w-5 h-5" /></a>
             </div>
           </article>
         </div>
       </div>
 
-      <footer className="border-t border-white/8 py-10 text-center text-sm text-muted-foreground">
+      <footer className="border-t border-border py-10 text-center text-sm text-muted-foreground">
         <div className="mx-auto max-w-7xl px-4">
           © 2026 DevForge Engineering Blog · Built for developers, by developers.
         </div>
